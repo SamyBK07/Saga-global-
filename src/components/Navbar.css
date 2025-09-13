@@ -1,0 +1,21 @@
+.navbar {
+  position: relative;
+  background: url("/logo.png") center/contain no-repeat;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  z-index: 2;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}

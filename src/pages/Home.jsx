@@ -1,38 +1,18 @@
 import { useNavigate } from "react-router-dom";
+import "../index.css";
 
-export default function Home() {
+function Home() {
   const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "linear-gradient(135deg, blue, yellow)",
-        textAlign: "center"
-      }}
-    >
-      <h1 style={{ fontSize: "3rem", color: "yellow", marginBottom: "2rem" }}>
-        Bienvenue chez Saga
-      </h1>
-
-      <button
-        onClick={() => navigate("/categories")}
-        style={{
-          padding: "1rem 2rem",
-          fontSize: "1.2rem",
-          background: "blue",
-          color: "white",
-          border: "none",
-          borderRadius: "8px",
-          cursor: "pointer"
-        }}
-      >
+    <div className="home-container">
+      <h1>Bienvenue</h1>
+      <img src="/logo.png" alt="Saga Global Logo" className="home-logo" />
+      <button onClick={() => navigate("/categories")} className="continue-btn">
         Continuer
       </button>
     </div>
   );
 }
+
+export default Home;

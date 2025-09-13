@@ -1,13 +1,18 @@
-export default function Footer() {
+import { FaPhone, FaWhatsapp, FaFacebook, FaEnvelope } from "react-icons/fa";
+import "./Footer.css";
+
+function Footer() {
   return (
-    <footer style={{
-      marginTop: "2rem",
-      padding: "1rem",
-      background: "#000",
-      color: "#fff",
-      textAlign: "center"
-    }}>
-      <p>Nous contacter : contact@sagaglobal.com</p>
+    <footer className="footer">
+      <p>Nous contacter</p>
+      <div className="contacts">
+        <a href="tel:+22912345678"><FaPhone /> Téléphone</a>
+        <a href="https://wa.me/22912345678"><FaWhatsapp /> WhatsApp</a>
+        <a href="https://facebook.com/tonpage"><FaFacebook /> Facebook</a>
+        <a href="mailto:contact@sagaglobal.com"><FaEnvelope /> Email</a>
+      </div>
     </footer>
   );
 }
+
+export default Footer;
