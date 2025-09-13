@@ -1,0 +1,26 @@
+.categories-container {
+  text-align: center;
+  padding: 3rem;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.category-card {
+  padding: 2rem;
+  background: yellow;
+  color: blue;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  background: blue;
+  color: yellow;
+}
