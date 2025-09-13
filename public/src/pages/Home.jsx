@@ -1,21 +1,40 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-  return (
-    <div style={{ textAlign: "center", padding: "2rem" }}>
-      <h2>Bienvenue chez Saga Global</h2>
-      <p>Découvrez nos gammes de produits :</p>
+  const navigate = useNavigate();
 
-      <div style={{ display: "flex", justifyContent: "center", gap: "2rem", marginTop: "2rem" }}>
-        <Link to="/lithotherapie" style={{ padding: "1rem", border: "1px solid #000" }}>
-          Lithothérapie
-        </Link>
-        <Link to="/cosmetique" style={{ padding: "1rem", border: "1px solid #000" }}>
-          Cosmétique
-        </Link>
-      </div>
+  return (
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "linear-gradient(135deg, blue, yellow)",
+        textAlign: "center"
+      }}
+    >
+      <h1 style={{ fontSize: "3rem", color: "yellow", marginBottom: "2rem" }}>
+        Bienvenue chez Saga
+      </h1>
+
+      <button
+        onClick={() => navigate("/categories")}
+        style={{
+          padding: "1rem 2rem",
+          fontSize: "1.2rem",
+          background: "blue",
+          color: "white",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer"
+        }}
+      >
+        Continuer
+      </button>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
