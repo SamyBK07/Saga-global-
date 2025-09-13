@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 export default function ProductCard({ product }) {
-  const [inCart, setInCart] = useState(false);
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
-  const toggleCart = () => setInCart(!inCart);
+  const inCart = cart.find(p => p.id === product.id);
 
   return (
     <div style={{
@@ -29,7 +30,7 @@ export default function ProductCard({ product }) {
       </p>
       {product.available && (
         <button
-          onClick={toggleCart}
+          onClick={() => inCart ? removeFromCart(product.id) : addToCart(product)}
           style={{
             marginTop: "0.5rem",
             padding: "0.5rem 1rem",
