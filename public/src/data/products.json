@@ -1,1 +1,34 @@
-
+{
+  "lithotherapie": [
+    {
+      "id": 1,
+      "name": "Bracelet en pierre naturelle",
+      "price": "15€",
+      "available": true,
+      "image": "/images/pierre1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Améthyste brute",
+      "price": "25€",
+      "available": true,
+      "image": "/images/pierre2.jpg"
+    }
+  ],
+  "cosmetique": [
+    {
+      "id": 3,
+      "name": "Crème hydratante bio",
+      "price": "20€",
+      "available": true,
+      "image": "/images/creme1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Huile essentielle",
+      "price": "12€",
+      "available": true,
+      "image": "/images/creme2.jpg"
+    }
+  ]
+}
