@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Categories.css";
+import "../styles/categories.css"; // Assure-toi que le chemin est correct
 
 export default function Categories() {
   return (
