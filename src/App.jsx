@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import Lithotherapie from "./pages/Lithotherapie";
 import Cosmetique from "./pages/Cosmetique";
-import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/lithotherapie" element={<Lithotherapie />} />
         <Route path="/cosmetique" element={<Cosmetique />} />
-        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>
