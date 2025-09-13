@@ -1,0 +1,28 @@
+.home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, blue, yellow);
+}
+
+.welcome-title {
+  font-size: 3rem;
+  color: yellow;
+  margin-bottom: 2rem;
+}
+
+.continue-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.continue-btn:hover {
+  background: darkblue;
+}
