@@ -1,31 +1,22 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-function ProductCard({ product }) {
-  const [inCart, setInCart] = useState(false);
-
-  const toggleCart = () => {
-    setInCart(!inCart);
-  };
+export default function ProductCard({ product }) {
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const inCart = cart.some(item => item.id === product.id);
 
   return (
-    <div
-      style={{
-        border: "1px solid #ddd",
-        borderRadius: "8px",
-        padding: "1rem",
-        margin: "1rem",
-        width: "200px",
-        textAlign: "center",
-        opacity: product.available ? 1 : 0.5,
-        background: "#fff",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.1)"
-      }}
-    >
-      <img
-        src={product.image}
-        alt={product.name}
-        style={{ width: "100%", borderRadius: "4px" }}
-      />
+    <div style={{
+      border: "1px solid #ddd",
+      borderRadius: "8px",
+      padding: "1rem",
+      margin: "1rem",
+      width: "200px",
+      textAlign: "center",
+      opacity: product.available ? 1 : 0.5,
+      background: "#fff"
+    }}>
+      <img src={product.image} alt={product.name} style={{ width: "100%" }} />
       <h3>{product.name}</h3>
       <p>{product.price} €</p>
       <p style={{ color: product.available ? "green" : "red" }}>
@@ -34,7 +25,7 @@ function ProductCard({ product }) {
 
       {product.available && (
         <button
-          onClick={toggleCart}
+          onClick={() => inCart ? removeFromCart(product.id) : addToCart(product)}
           style={{
             marginTop: "0.5rem",
             padding: "0.5rem 1rem",
@@ -51,5 +42,3 @@ function ProductCard({ product }) {
     </div>
   );
 }
-
-export default ProductCard;
