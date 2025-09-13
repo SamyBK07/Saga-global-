@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Home() {
+export default function Home() {
   const navigate = useNavigate();
 
   return (
@@ -36,5 +36,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
