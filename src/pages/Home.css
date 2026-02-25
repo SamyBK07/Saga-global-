@@ -13,7 +13,7 @@
 
 .hero {
   position: relative;
-  height: 90vh;
+  height: 70vh;
 
   display: flex;
   flex-direction: column;
@@ -33,8 +33,8 @@
 /* LOGO */
 
 .hero-logo {
-  width: 240px;
-  margin-bottom: 40px;
+  width: 320px;
+  margin-bottom: 20px;
 }
 
 /* CONTENU TEXTE */
