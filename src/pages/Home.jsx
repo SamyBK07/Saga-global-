@@ -11,7 +11,7 @@ const Home = () => {
       <section className="hero">
         <div className="hero-content">
           <h1>✨ Le bien-être à votre portée</h1>
-          <p>Cosmétiques de qualité • Paiement à la livraison</p>
+          <p>Beauté naturelle • Énergie positive</p>
 
           <Link to="/categories">
             <button className="hero-btn">
