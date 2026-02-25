@@ -6,56 +6,57 @@
 
 .hero {
   position: relative;
-  text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(to bottom, #ffffff 40%, #fdf3e7 100%);
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #ff7a00 0%,
+    #ff9d3f 40%,
+    #ffffff 100%
+  );
 }
 
-/* LOGO FILIGRANE */
+/* effet lumière floue */
 
 .hero::before {
   content: "";
   position: absolute;
-  inset: 0;
-
-  background: url("/logo.png") center no-repeat;
-  background-size: 450px;
-
-  opacity: 0.04;   /* Plus visible */
-  pointer-events: none;
-  z-index: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+  top: -150px;
+  right: -150px;
+  filter: blur(60px);
 }
 
-.hero-content {
-  position: relative;
+/* LOGO EN AVANT PLAN */
+
+.hero-logo {
+  width: 200px;
+  margin-bottom: 20px;
   z-index: 2;
 }
 
-.hero h1 {
-  font-size: 2.6rem;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-}
+/* bouton principal */
 
 .hero-btn {
-  background: #ff7a00;
-  padding: 12px 22px;
-  font-size: 16px;
-  color: white;
-  border-radius: 6px;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: white;
+  color: #ff7a00;
+  border-radius: 30px;
   border: none;
+  font-weight: 600;
   cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
 }
 
-/* TITRE SECTION */
-
-.section-title {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 1.8rem;
+.hero-btn:hover {
+  transform: translateY(-3px);
 }
