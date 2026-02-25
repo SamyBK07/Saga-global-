@@ -1,49 +1,23 @@
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
+import formatPrice from "../utils/formatPrice";
 
-export default function ProductCard({ product }) {
-  const { cart, addToCart, removeFromCart } = useContext(CartContext);
-
-  const inCart = cart.find(p => p.id === product.id);
+const ProductCard = ({ product }) => {
+  const { addToCart } = useCart();
 
   return (
-    <div style={{
-      border: "1px solid #ddd",
-      borderRadius: "8px",
-      padding: "1rem",
-      margin: "1rem",
-      width: "200px",
-      textAlign: "center",
-      opacity: product.available ? 1 : 0.5,
-      background: "#fff",
-      boxShadow: "0 2px 6px rgba(0,0,0,0.1)"
-    }}>
+    <div className="product-card">
       <img
-        src={product.image}
+        src={`/images/${product.category}/${product.image}`}
         alt={product.name}
-        style={{ width: "100%", borderRadius: "4px" }}
       />
       <h3>{product.name}</h3>
-      <p>{product.price} €</p>
-      <p style={{ color: product.available ? "green" : "red" }}>
-        {product.available ? "Disponible" : "Rupture de stock"}
-      </p>
-      {product.available && (
-        <button
-          onClick={() => inCart ? removeFromCart(product.id) : addToCart(product)}
-          style={{
-            marginTop: "0.5rem",
-            padding: "0.5rem 1rem",
-            background: inCart ? "red" : "blue",
-            color: "white",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer"
-          }}
-        >
-          {inCart ? "Retirer du panier" : "Ajouter au panier"}
-        </button>
-      )}
+      <p>{product.description}</p>
+      <strong>{formatPrice(product.price)}</strong>
+      <button onClick={() => addToCart(product)}>
+        Ajouter au panier
+      </button>
     </div>
   );
-}
+};
+
+export default ProductCard;
