@@ -12,21 +12,22 @@ export const sendOrder = async (orderData) => {
     items: orderData.items
       .map((item) => `${item.name} x${item.quantity}`)
       .join("\n"),
-    total: orderData.total + " €",
+    total: orderData.total + " FCFA",
     note: orderData.note || "Aucune note",
   };
 
   try {
-    await emailjs.send(
+    const response = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID,
       templateParams,
       PUBLIC_KEY
     );
 
+    console.log("SUCCESS!", response.status, response.text);
     return { success: true };
-  catch (error) {
-  console.log("EMAILJS ERROR FULL:", error);
-  alert("Erreur : " + JSON.stringify(error));
-  return { success: false };
-}
+  } catch (error) {
+    console.error("EMAILJS ERROR:", error);
+    return { success: false };
+  }
+};
