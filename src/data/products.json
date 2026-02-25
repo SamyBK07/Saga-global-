@@ -1,34 +1,34 @@
-{
-  "lithotherapie": [
-    {
-      "id": 1,
-      "name": "Quartz Rose",
-      "price": 15,
-      "available": true,
-      "image": "/images/pierre1.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Améthyste",
-      "price": 20,
-      "available": true,
-      "image": "/images/pierre2.jpg"
-    }
-  ],
-  "cosmetique": [
-    {
-      "id": 1,
-      "name": "Crème visage",
-      "price": 25,
-      "available": true,
-      "image": "/images/creme1.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Huile essentielle",
-      "price": 30,
-      "available": false,
-      "image": "/images/creme2.jpg"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Crème Hydratante Naturelle",
+    "category": "cosmetique",
+    "image": "creme-hydratante.jpg",
+    "price": 8000,
+    "description": "Hydratation intense pour une peau douce et éclatante."
+  },
+  {
+    "id": 2,
+    "name": "Sérum Vitamine C",
+    "category": "cosmetique",
+    "image": "serum-vitamine-c.jpg",
+    "price": 12000,
+    "description": "Illumine le teint et réduit les imperfections."
+  },
+  {
+    "id": 3,
+    "name": "Bracelet Quartz Rose",
+    "category": "lithotherapie",
+    "image": "bracelet-quartz-rose.jpg",
+    "price": 15000,
+    "description": "Pierre associée à l’amour et à l’apaisement émotionnel."
+  },
+  {
+    "id": 4,
+    "name": "Pierre Améthyste",
+    "category": "lithotherapie",
+    "image": "amethyste.jpg",
+    "price": 10000,
+    "description": "Favorise la sérénité et la protection énergétique."
+  }
+]
