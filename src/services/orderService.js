@@ -24,10 +24,17 @@ export const sendOrder = async (orderData) => {
       PUBLIC_KEY
     );
 
-    console.log("SUCCESS!", response.status, response.text);
+    console.log("EMAILJS SUCCESS:", response.status, response.text);
     return { success: true };
+
   } catch (error) {
-    console.error("EMAILJS ERROR:", error);
+    console.error("EMAILJS FULL ERROR:", error);
+
+    alert(
+      "STATUS: " + (error?.status || "undefined") +
+      " | TEXT: " + (error?.text || "undefined")
+    );
+
     return { success: false };
   }
 };
