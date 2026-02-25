@@ -1,18 +1,21 @@
-import { useNavigate } from "react-router-dom";
-import "../index.css";
+import products from "../data/products.json";
+import ProductCard from "../components/ProductCard";
 
-function Home() {
-  const navigate = useNavigate();
-
+const Home = () => {
   return (
-    <div className="home-container">
-      <h1>Bienvenue</h1>
-      <img src="/logo.png" alt="Saga Global Logo" className="home-logo" />
-      <button onClick={() => navigate("/categories")} className="continue-btn">
-        Continuer
-      </button>
+    <div>
+      <h1>Le bien-être à votre portée</h1>
+      <p>Cosmétiques de qualité • Paiement à la livraison</p>
+
+      <h2>Nos indispensables beauté</h2>
+
+      <div className="products-grid">
+        {products.slice(0, 4).map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Home;
