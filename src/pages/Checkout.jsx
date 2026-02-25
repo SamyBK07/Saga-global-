@@ -1,14 +1,36 @@
+import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import { sendOrder } from "../services/orderService";
 
 const Checkout = () => {
   const { cartItems, getTotalPrice, clearCart } = useCart();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [note, setNote] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    clearCart();
-    navigate("/success");
+
+    const orderData = {
+      name,
+      phone,
+      address: "Non renseignée",
+      items: cartItems,
+      total: getTotalPrice(),
+      note,
+    };
+
+    const result = await sendOrder(orderData);
+
+    if (result.success) {
+      clearCart();
+      navigate("/success");
+    } else {
+      alert("Erreur lors de l'envoi de la commande.");
+    }
   };
 
   return (
@@ -26,9 +48,28 @@ const Checkout = () => {
       <p>Total : {getTotalPrice()} FCFA</p>
 
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Nom complet" required />
-        <input type="tel" placeholder="Téléphone" required />
-        <textarea placeholder="Recommandation" />
+        <input
+          type="text"
+          placeholder="Nom complet"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        <input
+          type="tel"
+          placeholder="Téléphone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+        />
+
+        <textarea
+          placeholder="Recommandation"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        />
+
         <button type="submit">Valider</button>
       </form>
     </div>
