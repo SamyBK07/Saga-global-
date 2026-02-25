@@ -1,26 +1,47 @@
-.categories-container {
+.categories-page {
+  padding: 80px 20px;
   text-align: center;
-  padding: 3rem;
 }
 
-.categories {
+.categories-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Conteneur */
+
+.categories-buttons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-.category-card {
-  padding: 2rem;
-  background: yellow;
-  color: blue;
-  font-size: 1.5rem;
+/* Bouton principal */
+
+.category-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #ff7a00;
+  color: white;
   text-decoration: none;
-  border-radius: 10px;
+  font-weight: 500;
   transition: all 0.3s ease;
+  border: 2px solid #ff7a00;
 }
 
-.category-card:hover {
-  background: blue;
-  color: yellow;
+/* Bouton secondaire */
+
+.category-btn.secondary {
+  background: transparent;
+  color: #ff7a00;
+}
+
+/* Hover élégant */
+
+.category-btn:hover {
+  background: black;
+  border-color: black;
+  color: white;
+  transform: translateY(-2px);
 }
