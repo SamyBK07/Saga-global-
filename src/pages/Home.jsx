@@ -9,7 +9,16 @@ const Home = () => {
 
       {/* HERO */}
       <section className="hero">
-        <div className="hero-content">
+
+        {/* Logo en haut */}
+        <img 
+          src="/logo.png" 
+          alt="Saga Globale" 
+          className="hero-logo" 
+        />
+
+        {/* Contenu en bas */}
+        <div className="hero-bottom">
           <h1>✨ Le bien-être à votre portée</h1>
           <p>Beauté naturelle • Énergie positive</p>
 
@@ -19,6 +28,7 @@ const Home = () => {
             </button>
           </Link>
         </div>
+
       </section>
 
       {/* PRODUITS PHARES */}
