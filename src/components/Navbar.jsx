@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { useCart } from "../context/CartContext";
 
-function Navbar() {
+const Navbar = () => {
+  const { getTotalItems } = useCart();
+
   return (
     <nav className="navbar">
-      <ul>
-        <li><Link to="/">Accueil</Link></li>
-        <li><Link to="/categories">Catégories</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/panier">Panier</Link></li>
-      </ul>
+      <Link to="/">Saga Globale</Link>
+      <div>
+        <Link to="/categories">Catégories</Link>
+        <Link to="/cart">
+          Panier ({getTotalItems()})
+        </Link>
+      </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
