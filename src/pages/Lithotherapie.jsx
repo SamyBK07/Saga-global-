@@ -1,15 +1,22 @@
-import productsData from "../data/products.json";
+import products from "../data/products.json";
 import ProductCard from "../components/ProductCard";
 
-export default function Lithotherapie() {
+const Lithotherapie = () => {
+  const pierres = products.filter(
+    (product) => product.category === "lithotherapie"
+  );
+
   return (
-    <div style={{ textAlign: "center", padding: "2rem" }}>
+    <div>
       <h2>Lithothérapie</h2>
-      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
-        {productsData.lithotherapie.map(product => (
+
+      <div className="products-grid">
+        {pierres.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default Lithotherapie;
