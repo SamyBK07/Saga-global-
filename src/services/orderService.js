@@ -25,8 +25,8 @@ export const sendOrder = async (orderData) => {
     );
 
     return { success: true };
-  } catch (error) {
-    console.error("Erreur envoi email :", error);
-    return { success: false };
-  }
-};
+  catch (error) {
+  console.log("EMAILJS ERROR FULL:", error);
+  alert("Erreur : " + JSON.stringify(error));
+  return { success: false };
+}
