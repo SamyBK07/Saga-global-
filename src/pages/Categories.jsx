@@ -14,6 +14,10 @@ const Categories = () => {
         <Link to="/lithotherapie" className="category-btn secondary">
           Lithothérapie
         </Link>
+
+        <Link to="/encens" className="category-btn">
+          Encens
+        </Link>
       </div>
     </div>
   );
