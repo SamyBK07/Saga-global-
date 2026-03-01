@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import Cosmetique from "./pages/Cosmetique";
 import Lithotherapie from "./pages/Lithotherapie";
+import Encens from "./pages/Encens"; // 👈 AJOUT
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Success from "./pages/Success";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/cosmetique" element={<Cosmetique />} />
         <Route path="/lithotherapie" element={<Lithotherapie />} />
+        <Route path="/encens" element={<Encens />} /> {/* 👈 AJOUT */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/success" element={<Success />} />
