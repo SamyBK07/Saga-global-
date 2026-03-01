@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
-import { sendOrder } from "../services/orderService";
 
 const Checkout = () => {
   const { cartItems, getTotalPrice, clearCart } = useCart();
@@ -17,18 +16,30 @@ const Checkout = () => {
     const orderData = {
       name,
       phone,
-      address: "Non renseignée",
-      items: cartItems,
-      total: getTotalPrice(),
+      items: cartItems
+        .map((item) => `${item.name} x${item.quantity}`)
+        .join("\n"),
+      total: getTotalPrice() + " FCFA",
       note,
     };
 
-    const result = await sendOrder(orderData);
+    try {
+      const response = await fetch("https://formspree.io/f/mwvnjrjr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
 
-    if (result.success) {
-      clearCart();
-      navigate("/success");
-    } else {
+      if (response.ok) {
+        clearCart();
+        navigate("/success");
+      } else {
+        alert("Erreur lors de l'envoi de la commande.");
+      }
+    } catch (error) {
+      console.error(error);
       alert("Erreur lors de l'envoi de la commande.");
     }
   };
