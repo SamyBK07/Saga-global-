@@ -30,5 +30,37 @@
     "image": "amethyste.jpg",
     "price": 10000,
     "description": "Favorise la sérénité et la protection énergétique."
+  },
+  {
+    "id": 5,
+    "name": "Encens à la Cannelle",
+    "category": "encens",
+    "image": "encens-cannelle.jpg",
+    "price": 4500,
+    "description": "Booste l’énergie d’abondance et stimule la prospérité au quotidien."
+  },
+  {
+    "id": 6,
+    "name": "Encens Harmonie & Bonne Humeur",
+    "category": "encens",
+    "image": "encens-harmonie.jpg",
+    "price": 4500,
+    "description": "Attire les bonnes vibrations et les énergies positives grâce à ses ingrédients naturels."
+  },
+  {
+    "id": 7,
+    "name": "Encens Déblocage & Abondance",
+    "category": "encens",
+    "image": "encens-abondance.jpg",
+    "price": 5000,
+    "description": "Favorise le déblocage énergétique et attire l’abondance dans tous les aspects de votre vie."
+  },
+  {
+    "id": 8,
+    "name": "Encens de Protection",
+    "category": "encens",
+    "image": "encens-protection.jpg",
+    "price": 3500,
+    "description": "Protège contre les énergies négatives et attire les vibrations positives."
   }
 ]
