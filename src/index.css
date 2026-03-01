@@ -11,7 +11,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: #ff7a00; /* ORANGE */
+  background: #ff7a00;
   color: white;
 }
 
@@ -31,9 +31,11 @@ body {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 25px;
-  padding: 30px;
+  grid-template-columns: 1fr 1fr; /* 🔥 2 PAR LIGNE */
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .product-card {
@@ -43,6 +45,7 @@ body {
   border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   background: white;
+  width: 100%; /* 🔥 important */
 }
 
 .product-card:hover {
