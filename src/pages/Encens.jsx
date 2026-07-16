@@ -1,22 +1,5 @@
-import products from "../data/products.json";
-import ProductCard from "../components/ProductCard";
+import CategoryPage from "../components/CategoryPage";
 
-const Encens = () => {
-  const encensProducts = products.filter(
-    (product) => product.category === "encens"
-  );
-
-  return (
-    <div>
-      <h2>Encens</h2>
-
-      <div className="products-grid">
-        {encensProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </div>
-  );
-};
+const Encens = () => <CategoryPage title="Encens" category="encens" />;
 
 export default Encens;
