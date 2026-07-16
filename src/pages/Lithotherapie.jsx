@@ -1,22 +1,5 @@
-import products from "../data/products.json";
-import ProductCard from "../components/ProductCard";
+import CategoryPage from "../components/CategoryPage";
 
-const Lithotherapie = () => {
-  const pierres = products.filter(
-    (product) => product.category === "lithotherapie"
-  );
-
-  return (
-    <div>
-      <h2>Lithothérapie</h2>
-
-      <div className="products-grid">
-        {pierres.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </div>
-  );
-};
+const Lithotherapie = () => <CategoryPage title="Lithothérapie" category="lithotherapie" />;
 
 export default Lithotherapie;
