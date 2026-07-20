@@ -63,6 +63,14 @@
       "image": "/images/encens/encens-protection.jpg",
       "price": 3500,
       "description": "Protège contre les énergies négatives et attire les vibrations positives."
+    },
+    {
+      "id": 1,
+      "name": "Thé ",
+      "category": "encens",
+      "price": 500,
+      "description": "Thé de moringa",
+      "image": "/images/uploads/img-20260710-wa0046.jpg"
     }
   ]
 }
