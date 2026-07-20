@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: main # adapte si ta branche par défaut s'appelle "master"
+
+# Dossier où les nouvelles images uploadées via l'admin seront rangées
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Permet de prévisualiser avant de publier (optionnel mais pratique)
+publish_mode: simple
+
+locale: "fr"
+
+collections:
+  - name: "products"
+    label: "Produits"
+    description: "Catalogue de la boutique Saga Global"
+    files:
+      - name: "products"
+        label: "Catalogue produits"
+        file: "src/data/products.json"
+        fields:
+          - label: "Produits"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.price}} FCFA"
+            fields:
+              - { label: "Identifiant unique (numéro)", name: "id", widget: "number", hint: "Ne jamais réutiliser un numéro déjà existant" }
+              - { label: "Nom du produit", name: "name", widget: "string" }
+              - label: "Catégorie"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Cosmétique", value: "cosmetique" }
+                  - { label: "Lithothérapie", value: "lithotherapie" }
+                  - { label: "Encens", value: "encens" }
+              - { label: "Photo du produit", name: "image", widget: "image" }
+              - { label: "Prix (FCFA)", name: "price", widget: "number", value_type: "int" }
+              - { label: "Description", name: "description", widget: "text" }
