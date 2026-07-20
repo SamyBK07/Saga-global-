@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Crème Hydratante Naturelle",
+      "category": "cosmetique",
+      "image": "/images/cosmetique/creme-hydratante.jpg",
+      "price": 8000,
+      "description": "Hydratation intense pour une peau douce et éclatante."
+    },
+    {
+      "id": 2,
+      "name": "Sérum Vitamine C",
+      "category": "cosmetique",
+      "image": "/images/cosmetique/serum-vitamine-c.jpg",
+      "price": 12000,
+      "description": "Illumine le teint et réduit les imperfections."
+    },
+    {
+      "id": 3,
+      "name": "Bracelet Quartz Rose",
+      "category": "lithotherapie",
+      "image": "/images/lithotherapie/bracelet-quartz-rose.jpg",
+      "price": 15000,
+      "description": "Pierre associée à l’amour et à l’apaisement émotionnel."
+    },
+    {
+      "id": 4,
+      "name": "Pierre Améthyste",
+      "category": "lithotherapie",
+      "image": "/images/lithotherapie/amethyste.jpg",
+      "price": 10000,
+      "description": "Favorise la sérénité et la protection énergétique."
+    },
+    {
+      "id": 5,
+      "name": "Encens à la Cannelle",
+      "category": "encens",
+      "image": "/images/encens/encens-cannelle.jpg",
+      "price": 4500,
+      "description": "Booste l’énergie d’abondance et stimule la prospérité au quotidien."
+    },
+    {
+      "id": 6,
+      "name": "Encens Harmonie & Bonne Humeur",
+      "category": "encens",
+      "image": "/images/encens/encens-harmonie.jpg",
+      "price": 4500,
+      "description": "Attire les bonnes vibrations et les énergies positives grâce à ses ingrédients naturels."
+    },
+    {
+      "id": 7,
+      "name": "Encens Déblocage & Abondance",
+      "category": "encens",
+      "image": "/images/encens/encens-abondance.jpg",
+      "price": 5000,
+      "description": "Favorise le déblocage énergétique et attire l’abondance dans tous les aspects de votre vie."
+    },
+    {
+      "id": 8,
+      "name": "Encens de Protection",
+      "category": "encens",
+      "image": "/images/encens/encens-protection.jpg",
+      "price": 3500,
+      "description": "Protège contre les énergies négatives et attire les vibrations positives."
+    }
+  ]
+}
