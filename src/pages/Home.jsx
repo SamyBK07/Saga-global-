@@ -25,6 +25,16 @@ const Home = () => {
     <div className="home">
       <section className="home-hero">
         <img src="/logo.png" alt="Saga Globale" className="home-hero-logo" />
+        <div className="home-about-text">
+          <p>
+            Créée en 2021 par <strong>Georgette Azonnadou</strong>, Saga Global
+            est née d'une passion pour la cosmétique.
+          </p>
+          <p>
+            Elle s'est étendue aujourd'hui et couvre plusieurs autres
+            domaines : <strong>Thé, Savons, Encens</strong>.
+          </p>
+        </div>
       </section>
 
       <section className="search-section">
@@ -55,16 +65,7 @@ const Home = () => {
             </div>
           )}
         </section>
-      ) : (
-        <section>
-          <h2 className="section-title">Dernières nouveautés</h2>
-          <div className="products-grid">
-            {nouveautes.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-      )}
+      ) : null}
     </div>
   );
 };
