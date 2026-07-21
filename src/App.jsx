@@ -4,9 +4,7 @@ import BottomNav from "./components/BottomNav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Categories from "./pages/Categories";
-import Cosmetique from "./pages/Cosmetique";
-import Lithotherapie from "./pages/Lithotherapie";
-import Encens from "./pages/Encens";
+import AboutPage from "./pages/AboutPage";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Success from "./pages/Success";
@@ -19,9 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/cosmetique" element={<Cosmetique />} />
-          <Route path="/lithotherapie" element={<Lithotherapie />} />
-          <Route path="/encens" element={<Encens />} />
+          <Route path="/a-propos" element={<AboutPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<Success />} />
