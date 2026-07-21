@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FaHome, FaThLarge, FaShoppingCart } from "react-icons/fa";
+import { FaHome, FaThLarge, FaShoppingCart, FaUser } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 
 const BottomNav = () => {
@@ -16,6 +16,11 @@ const BottomNav = () => {
       <NavLink to="/categories" className={({ isActive }) => "bottom-nav-item" + (isActive ? " active" : "")}>
         <FaThLarge className="bottom-nav-icon" />
         <span>Catégories</span>
+      </NavLink>
+
+      <NavLink to="/a-propos" className={({ isActive }) => "bottom-nav-item" + (isActive ? " active" : "")}>
+        <FaUser className="bottom-nav-icon" />
+        <span>À propos</span>
       </NavLink>
 
       <NavLink to="/cart" className={({ isActive }) => "bottom-nav-item" + (isActive ? " active" : "")}>
