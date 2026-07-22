@@ -15,7 +15,7 @@ const BottomNav = () => {
 
       <NavLink to="/categories" className={({ isActive }) => "bottom-nav-item" + (isActive ? " active" : "")}>
         <FaThLarge className="bottom-nav-icon" />
-        <span>Catégories</span>
+        <span>Nos produits</span>
       </NavLink>
 
       <NavLink to="/a-propos" className={({ isActive }) => "bottom-nav-item" + (isActive ? " active" : "")}>
