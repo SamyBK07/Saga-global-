@@ -1,12 +1,3 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "Thé de kinkeliba aromatisé à la verveine",
-      "category": "the",
-      "image": "/images/uploads/img-20260709-wa0013-2-.jpg",
-      "price": 2000,
-      "description": "Thé de kinkeliba à l'arôme de verveine : une infusion naturelle aux notes fraîches et citronnées, idéale pour un moment de détente à tout moment de la journée."
-    }
-  ]
+  "products": []
 }
