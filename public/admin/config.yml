@@ -31,8 +31,8 @@ collections:
                 name: "category"
                 widget: "select"
                 options:
-                  - { label: "Cosmétique", value: "cosmetique" }
-                  - { label: "Lithothérapie", value: "lithotherapie" }
+                  - { label: "Thé", value: "the" }
+                  - { label: "Savons", value: "savons" }
                   - { label: "Encens", value: "encens" }
               - { label: "Photo du produit", name: "image", widget: "image" }
               - { label: "Prix (FCFA)", name: "price", widget: "number", value_type: "int" }
