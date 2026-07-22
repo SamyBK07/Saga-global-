@@ -27,13 +27,7 @@ collections:
             fields:
               - { label: "Identifiant unique (numéro)", name: "id", widget: "number", hint: "Ne jamais réutiliser un numéro déjà existant" }
               - { label: "Nom du produit", name: "name", widget: "string" }
-              - label: "Catégorie"
-                name: "category"
-                widget: "select"
-                options:
-                  - { label: "Thé", value: "the" }
-                  - { label: "Savons", value: "savons" }
-                  - { label: "Encens", value: "encens" }
+              
               - { label: "Photo du produit", name: "image", widget: "image" }
               - { label: "Prix (FCFA)", name: "price", widget: "number", value_type: "int" }
               - { label: "Description", name: "description", widget: "text" }
