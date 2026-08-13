@@ -355,3 +355,38 @@ button:disabled {
 .contact-buttons a:hover {
   background: #e56700;
 }
+.site-header {
+  position: relative;
+}
+
+.burger-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #222;
+  cursor: pointer;
+}
+
+.burger-menu {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.burger-menu a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #222;
+}
+
+.burger-menu a:hover {
+  background: #f7f7f7;
+}
