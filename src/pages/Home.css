@@ -1,3 +1,8 @@
+.home {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .home-hero {
   width: 100%;
   padding: 80px 20px;
@@ -32,4 +37,10 @@
   line-height: 1.6;
   color: #fff;
   margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .home-about-text p {
+    font-size: 1.15rem;
+  }
 }
