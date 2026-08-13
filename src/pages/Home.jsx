@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar";
 import { useProducts } from "../hooks/useProducts";
 import { getSearchHistory, addToSearchHistory } from "../utils/searchHistory";
 import "./Home.css";
+import NewsSection from "../components/NewsSection";
 
 const Home = () => {
   const [search, setSearch] = useState("");
@@ -32,6 +33,11 @@ const Home = () => {
           </p>
         </div>
       </section>
+      <section className="home-hero">
+  ...
+</section>
+
+<NewsSection />
 
       <section className="search-section">
         <SearchBar onSearch={handleSearch} initialValue={search} />
