@@ -17,7 +17,7 @@ import DashboardLayout from "./pages/dashboard/DashboardLayout";
 import ProtectedRoute from "./components/dashboard/ProtectedRoute";
 import Produits from "./pages/dashboard/Produits";
 import Actualites from "./pages/dashboard/Actualites";
-
+import CommandesStats from "./pages/dashboard/CommandesStats";
 function App() {
   return (
     <AuthProvider>
@@ -34,6 +34,7 @@ function App() {
           >
             <Route path="produits" element={<Produits />} />
             <Route path="actualites" element={<Actualites />} />
+            <Route path="commandes" element={<CommandesStats />} />
           </Route>
 
           <Route
