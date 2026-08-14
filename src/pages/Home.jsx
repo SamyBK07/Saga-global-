@@ -27,8 +27,6 @@ const Home = () => {
         </div>
       </section>
 
-      <NewsSection />
-
       <section className="search-section">
         <SearchBar onSearch={handleSearch} initialValue={search} />
 
@@ -43,6 +41,8 @@ const Home = () => {
           </div>
         )}
       </section>
+
+      <NewsSection />
 
       {search.trim() !== "" ? (
         <section>
@@ -64,6 +64,3 @@ const Home = () => {
       ) : null}
     </div>
   );
-};
-
-export default Home;
