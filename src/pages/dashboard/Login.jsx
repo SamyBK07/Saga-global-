@@ -1,4 +1,3 @@
-import "./Dashboard.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -16,8 +15,8 @@ const Login = () => {
     try {
       await login(email, password);
       navigate("/dashboard/produits");
-    } catch {
-      setError("Identifiants incorrects.");
+    } catch (err) {
+      setError(err.message || "Erreur inconnue");
     }
   };
 
