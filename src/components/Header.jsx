@@ -7,9 +7,9 @@ const Header = () => {
 
   return (
     <header className="site-header">
-      <Link to="/">
-        <img src="/logo.png" alt="Saga Globale" className="site-logo" />
-      </Link>
+      <Link to="/dashboard/login">
+  <img src="/logo.png" alt="Saga Globale" className="site-logo" />
+</Link>
 
       <button className="burger-btn" onClick={() => setOpen(!open)}>
         {open ? <FaTimes /> : <FaBars />}
