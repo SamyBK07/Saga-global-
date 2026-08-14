@@ -64,3 +64,6 @@ const Home = () => {
       ) : null}
     </div>
   );
+};
+
+export default Home;
