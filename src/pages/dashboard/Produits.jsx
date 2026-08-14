@@ -67,12 +67,13 @@ const Produits = () => {
       <form onSubmit={handleSubmit} className="dashboard-form">
         <input placeholder="Nom" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required />
         <input type="number" placeholder="Prix (FCFA)" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} required />
-        <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} required>
-          <option value="">Catégorie</option>
-          <option value="cosmetique">Cosmétique</option>
-          <option value="encens">Encens</option>
-          <option value="lithotherapie">Lithothérapie</option>
-        </select>
+        <input
+          type="text"
+          placeholder="Catégorie (ex: cosmetique, encens...)"
+          value={form.category}
+          onChange={(e) => setForm({ ...form, category: e.target.value })}
+          required
+        />
         <textarea placeholder="Description" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
         <label>
           Photo (optionnel)
