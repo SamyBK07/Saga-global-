@@ -22,8 +22,10 @@ const Home = () => {
   return (
     <div className="home">
       <section className="home-hero">
-        <div className="home-about-text">
-          <p>Le bien-être à votre portée</p>
+        <div className="home-hero-content">
+          <h1 className="home-hero-title">Saga Global</h1>
+          <img src="/logo.png" alt="Saga Global" className="home-hero-logo" />
+          <p className="home-hero-slogan">Le bien-être à votre portée</p>
         </div>
       </section>
 
