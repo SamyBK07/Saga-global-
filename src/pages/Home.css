@@ -3,6 +3,11 @@
   overflow-x: hidden;
 }
 
+.home {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .home-hero {
   width: 100%;
   padding: 80px 20px;
@@ -11,31 +16,53 @@
   align-items: center;
   text-align: center;
   position: relative;
-  background-image: url("/logo.png");
+  background-image: url("/fleur.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
+  background-size: cover;
   min-height: 400px;
   justify-content: center;
 }
+
 .home-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.45);
 }
 
-.home-about-text {
+.home-hero-content {
   position: relative;
   z-index: 1;
-  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.home-about-text p {
-  font-size: 1.4rem;
-  line-height: 1.6;
+.home-hero-title {
   color: #fff;
-  margin-bottom: 12px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.home-hero-logo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.home-hero-slogan {
+  color: #fff;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .home-hero-title {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 480px) {
