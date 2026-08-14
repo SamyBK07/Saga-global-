@@ -14,11 +14,10 @@
   background-image: url("/logo.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 50%;
   min-height: 400px;
   justify-content: center;
 }
-
 .home-hero::before {
   content: "";
   position: absolute;
