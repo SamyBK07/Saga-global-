@@ -18,13 +18,18 @@ import ProtectedRoute from "./components/dashboard/ProtectedRoute";
 import Produits from "./pages/dashboard/Produits";
 import Actualites from "./pages/dashboard/Actualites";
 import CommandesStats from "./pages/dashboard/CommandesStats";
+import DashboardHome from "./pages/dashboard/DashboardHome";
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/dashboard/login" element={<Login />} />
-          <Route
+          <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+  <Route index element={<DashboardHome />} />
+  <Route path="produits" element={<Produits />} />
+  <Route path="actualites" element={<Actualites />} />
+  <Route path="commandes" element={<CommandesStats />} />
+</Route>
             path="/dashboard"
             element={
               <ProtectedRoute>
