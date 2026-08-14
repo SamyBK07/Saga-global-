@@ -23,21 +23,11 @@ const Home = () => {
     <div className="home">
       <section className="home-hero">
         <div className="home-about-text">
-          <p>
-            Créée en 2021 par <strong>Georgette Azonnadou</strong>, Saga Global
-            est née d'une passion pour la cosmétique.
-          </p>
-          <p>
-            Elle s'est étendue aujourd'hui et couvre plusieurs autres
-            domaines : <strong>Thé, Savons, Encens</strong>.
-          </p>
+          <p>Le bien-être à votre portée</p>
         </div>
       </section>
-      <section className="home-hero">
-  ...
-</section>
 
-<NewsSection />
+      <NewsSection />
 
       <section className="search-section">
         <SearchBar onSearch={handleSearch} initialValue={search} />
