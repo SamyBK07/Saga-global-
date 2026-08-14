@@ -45,3 +45,26 @@
   color: white;
   transform: translateY(-2px);
 }
+
+.categories-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0 25px;
+}
+
+.category-chip {
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.category-chip:hover {
+  background: #6a3de8;
+  color: #fff;
+  border-color: #6a3de8;
+}
