@@ -24,9 +24,15 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
+  try {
     await account.createEmailPasswordSession(email, password);
-    await checkSession();
-  };
+  } catch (err) {
+    if (err.type !== "user_session_already_exists") {
+      throw err;
+    }
+  }
+  await checkSession();
+};
 
   const logout = async () => {
     await account.deleteSession("current");
