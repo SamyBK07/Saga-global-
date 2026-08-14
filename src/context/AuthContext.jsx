@@ -1,36 +1,47 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { createContext, useContext, useState, useEffect } from "react";
+import { account } from "../services/appwrite";
 
-const Login = () => {
-  const { login } = useAuth();
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+const AuthContext = createContext();
+export const useAuth = () => useContext(AuthContext);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const checkSession = async () => {
     try {
-      await login(email, password);
-      navigate("/dashboard/produits");
-    } catch (err) {
-      setError(err.message || "Erreur inconnue");
+      const current = await account.get();
+      setUser(current);
+    } catch {
+      setUser(null);
+    } finally {
+      setLoading(false);
     }
   };
 
-  return (
-    <div className="dashboard-login">
-      <h2>Connexion au tableau de bord</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        {error && <p className="error">{error}</p>}
-        <button type="submit">Se connecter</button>
-      </form>
-    </div>
-  );
+  useEffect(() => {
+    checkSession();
+  }, []);
+
+  const login = async (email, password) => {
+  try {
+    await account.createEmailPasswordSession(email, password);
+  } catch (err) {
+    if (err.type !== "user_session_already_exists") {
+      throw err;
+    }
+  }
+  await checkSession();
 };
 
-export default Login;
+  const logout = async () => {
+    await account.deleteSession("current");
+    setUser(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, loading, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
