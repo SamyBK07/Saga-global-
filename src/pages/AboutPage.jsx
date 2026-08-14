@@ -7,7 +7,7 @@ const AboutPage = () => {
         <img src="/images/georgette.jpg" alt="Georgette Azonnadou" className="about-photo" />
       </div>
       <div className="about-text">
-        <h2>Georgette Azonnadou</h2>
+        <h2>Saga Global</h2>
         <p>
           Créée en 2021, Saga Global est née d'une
           passion pour la cosmétique.
