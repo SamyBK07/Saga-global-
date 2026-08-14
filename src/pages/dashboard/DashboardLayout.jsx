@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import "./Dashboard.css";
 
@@ -19,9 +19,17 @@ const DashboardLayout = () => {
         </NavLink>
         <button onClick={logout}>Déconnexion</button>
       </aside>
-      <main className="dashboard-content">
-        <Outlet />
-      </main>
+
+      <div className="dashboard-main">
+        <header className="dashboard-header">
+          <Link to="/">
+            <img src="/logo.png" alt="Retour au site" className="dashboard-header-logo" />
+          </Link>
+        </header>
+        <main className="dashboard-content">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 };
