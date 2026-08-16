@@ -20,8 +20,15 @@ const Actualites = () => {
 
   const uploadImage = async () => {
     if (!file) return form.image || "";
-    const uploaded = await storage.createFile(BUCKET_ID, ID.unique(), file);
-    return storage.getFileView(BUCKET_ID, uploaded.$id).href;
+    const uploaded = await storage.createFile({
+      bucketId: BUCKET_ID,
+      fileId: ID.unique(),
+      file: file,
+    });
+    return storage.getFileView({
+      bucketId: BUCKET_ID,
+      fileId: uploaded.$id,
+    }).href;
   };
 
   const handleSubmit = async (e) => {
