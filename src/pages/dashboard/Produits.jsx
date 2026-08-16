@@ -32,29 +32,32 @@ const Produits = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSaving(true);
-    try {
-      const imageUrl = await uploadImage();
-      const payload = { ...form, price: Number(form.price), image: imageUrl };
+  e.preventDefault();
+  setSaving(true);
+  try {
+    const imageUrl = await uploadImage();
+    const payload = { ...form, price: Number(form.price), image: imageUrl };
 
-      const url = editingId ? `${API_BASE}/api/products/${editingId}` : `${API_BASE}/api/products`;
-      const method = editingId ? "PUT" : "POST";
+    const url = editingId ? `${API_BASE}/api/products/${editingId}` : `${API_BASE}/api/products`;
+    const method = editingId ? "PUT" : "POST";
 
-      await fetch(url, {
-        method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    await fetch(url, {
+      method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
-      setForm(empty);
-      setFile(null);
-      setEditingId(null);
-      load();
-    } finally {
-      setSaving(false);
-    }
-  };
+    setForm(empty);
+    setFile(null);
+    setEditingId(null);
+    load();
+  } catch (err) {
+    console.error("Erreur upload/produit:", err);
+    alert("Erreur : " + (err?.message || err));
+  } finally {
+    setSaving(false);
+  }
+};
 
   const handleEdit = (p) => {
     setForm({ name: p.name, price: p.price, description: p.description, category: p.category, image: p.image });
